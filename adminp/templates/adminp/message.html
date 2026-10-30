@@ -1,0 +1,70 @@
+<!doctype html>
+{% load static %}
+
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1020">
+  <title>Admin Inbox | Ayyappa Reddy</title>
+  <link rel="stylesheet" href="{% static 'css/admin.css' %}">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="{% url 'home' %}#home"><span class="brand-mark">AR</span><span>Ayyappa Reddy</span></a>
+    <a class="back-link" href="{% url 'home' %}">← Back to portfolio</a>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light theme">☾</button>
+  </header>
+  <main>
+    <section class="inbox">
+      <p class="eyebrow">LOCAL INBOX</p>
+      <h1>Admin <span>panel</span></h1>
+      <p class="subtitle">Messages submitted through your portfolio.</p>
+      <div class="toolbar">
+    <p>{{ messages|length }} message{{ messages|length|pluralize }}</p>
+
+    <form method="POST" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit" class="clear-button">Logout</button>
+    </form>
+</div>
+
+<div class="messages-list">
+    {% for item in messages %}
+        <article class="message-card">
+            <h2>{{ item.name }}</h2>
+
+            <a href="mailto:{{ item.email }}">{{ item.email }}</a>
+
+            <time>{{ item.created_at|date:"M d, Y H:i" }}</time>
+
+            <p>{{ item.message|linebreaksbr }}</p>
+            <form class="delete" method="POST" action="{% url 'del_message' item.id %}" onsubmit="return conform('Are you sure?')">
+              {% csrf_token %}
+              <button type="submit" class="del_button">Delete</button>
+            </form>
+        </article>
+    {% empty %}
+        <p class="empty-state">Your inbox is empty. Contact form submissions will appear here.</p>
+    {% endfor %}
+</div>
+    </section>
+  </main>
+  <script>
+    const root = document.documentElement;
+    const themeToggle = document.getElementById('themeToggle');
+    const savedTheme = localStorage.getItem('portfolio-theme');
+    if (savedTheme) root.dataset.theme = savedTheme;
+    function updateTheme() {
+      const light = root.dataset.theme === 'light';
+      themeToggle.textContent = light ? '☀' : '☾';
+      themeToggle.setAttribute('aria-label', light ? 'Switch to dark theme' : 'Switch to light theme');
+    }
+    themeToggle.addEventListener('click', () => {
+      root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+      localStorage.setItem('portfolio-theme', root.dataset.theme);
+      updateTheme();
+    });
+  </script>
+</body>
+</html>

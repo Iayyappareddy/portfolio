@@ -1,0 +1,118 @@
+<!doctype html>
+{% load static %}
+
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1020">
+  <meta name="description" content="Ayyappa Reddy — Python full-stack developer and AI developer. Explore my experience, projects, and skills.">
+  <title>Ayyappa Reddy | Python Full-Stack &amp; AI Developer</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Ayyappa Reddy, home"><span class="brand-mark">AR</span><span class="brand-name">Ayyappa Reddy</span></a>
+    <nav id="mainNav" aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+      <a href="{% url 'message_list' %}">Admin panel</a>
+    </nav>
+    <a class="button resume-button" href="Ayyappa_FullStack_Resume.docx" download>↓ <span>Download Resume</span></a>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light theme">☾</button>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mainNav"><span></span><span></span><span></span></button>
+  </header>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow hero-hello">Hello, I'm</p>
+        <h1>Ayyappa <span>Reddy</span></h1>
+        <h2>Python Full Stack Developer &<br>AI Developer</h2>
+        <p class="intro">I build scalable web applications and AI-powered systems<br>using Django, DRF, and PostgreSQL, paired with modern AI<br>tooling like RAG, LlamaIndex, Ollama, and Qdrant.</p>
+        <div class="hero-actions"><a class="button primary" href="#projects">View My Projects <span>→</span></a><a class="button secondary" href="#contact">Contact Me <span>✉</span></a></div>
+        <div class="socials"><span class="social-label">Connect with me</span>
+          <a href="https://github.com/Iayyappareddy" target="_blank" rel="noreferrer" aria-label="GitHub"><img src="{%static 'images/icons8-github-30.png'%}" alt=""></a>
+          <a href="https://www.linkedin.com/in/ayyappa-reddy-i-31696a343" target="_blank" rel="noreferrer" aria-label="LinkedIn"><img src="{%static 'images/icons8-linkedin-30.png' %}" alt=""></a>
+          <a href="mailto:iragamreddyayyappareddy72@gmail.com" aria-label="Email"><img src="{%static 'images/icons8-mail-24.png' %}" alt=""></a>
+        </div>
+      </div>
+      <div class="portrait-wrap"><div class="portrait-ring"><img class="portrait" src="{%static 'images/ayyappa.jpeg' %}" alt="Portrait of Ayyappa Reddy"></div><span class="orbit orbit-one">Python</span><span class="orbit orbit-two">AI + Web</span></div>
+    </section>
+
+    <section class="section" id="about"><div class="section-heading"><p class="eyebrow">A LITTLE ABOUT ME</p><h2>Building useful things with <span>code &amp; curiosity.</span></h2></div><div class="about-grid"><p class="lead">I'm a final-year Computer Science undergraduate at Sri Krishnadevaraya University College of Engineering and Technology. My work brings together Python backends, modern web development, and AI-powered experiences.</p><p>I've built privacy-first AI search with local language models, a yoga recommendation platform, and data analysis projects. I care about dependable engineering, clear user experiences, and software that solves a real problem.</p></div><div class="facts"><div><strong>2026</strong><span>Graduating</span></div><div><strong>8.2 / 10</strong><span>CGPA</span></div><div><strong>180 hrs</strong><span>Data science internship</span></div></div></section>
+
+    <section class="section" id="skills"><div class="section-heading"><p class="eyebrow">WHAT I WORK WITH</p><h2>Skills &amp; <span>toolkit</span></h2></div><div class="skill-grid">
+      <article class="card"><span class="card-icon">⌘</span><h3>Languages</h3><p>Python · JavaScript · SQL<br>Java (basic) · C (basic)</p></article>
+      <article class="card"><span class="card-icon">⌂</span><h3>Web development</h3><p>Django · Django REST Framework<br>REST APIs · HTML5 · CSS3 · Responsive design</p></article>
+      <article class="card"><span class="card-icon">◈</span><h3>AI &amp; data</h3><p>LLMs · RAG · LlamaIndex · Ollama<br>Qdrant · Vector embeddings · Pandas · Matplotlib</p></article>
+      <article class="card"><span class="card-icon">▦</span><h3>Databases &amp; backend</h3><p>PostgreSQL · Oracle SQL · Django ORM<br>JWT · RBAC · Celery · Redis</p></article>
+      <article class="card"><span class="card-icon">⌘</span><h3>Developer tools</h3><p>Git · GitHub · VS Code<br>pgAdmin · Jupyter Notebook</p></article>
+      <article class="card"><span class="card-icon">◎</span><h3>Core concepts</h3><p>Object-oriented programming<br>Data analysis · API design</p></article>
+    </div></section>
+
+    <section class="section" id="experience"><div class="section-heading"><h2>Experience</h2></div><article class="timeline-card"><div class="timeline-dot"></div><div class="timeline-top"><div><h3>Data Science Trainee</h3><p class="muted">Infineez Solutions · Remote</p></div><span class="date">June – August 2025</span></div><ul><li>Completed a 180-hour internship applying Python to real-world data cleaning, transformation, and analysis.</li><li>Used SQL for data extraction, joins, and aggregation, with structured debugging workflows.</li><li>Produced analytical summaries and visualizations with Pandas and Matplotlib.</li></ul></article></section>
+
+    <section class="section" id="projects"><div class="section-heading"><p class="eyebrow">SELECTED WORK</p><h2>Projects that <span>make an impact.</span></h2></div><div class="project-grid">
+      <article class="project-card"><div class="project-top"><span class="project-number">01 / AI</span><span class="project-symbol">✳</span></div><h3>Enterprise Private AI Assistant</h3><p>A privacy-first knowledge assistant with local LLM inference and context-aware document search. Includes multi-user permissions and asynchronous document ingestion.</p><div class="tags"><span>Django REST</span><span>RAG</span><span>Ollama</span><span>Qdrant</span><span>Celery</span></div><div class="project-links"><a href="https://enterprise-ai.netlify.app/" target="_blank" rel="noreferrer">Live demo ↗</a><a href="https://github.com/Iayyappareddy/enterprise-ai-assistant" target="_blank" rel="noreferrer">GitHub ↗</a></div></article>
+      <article class="project-card"><div class="project-top"><span class="project-number">02 / WEB + AI</span><span class="project-symbol">◉</span></div><h3>GenYoga</h3><p>An AI-powered yoga recommendation platform that analyzes a user's pain description and session duration to suggest poses and personalized courses.</p><div class="tags"><span>Django</span><span>PostgreSQL</span><span>Python</span><span>JavaScript</span></div><div class="project-links"><a href="https://genyoga.onrender.com/" target="_blank" rel="noreferrer">Live demo ↗</a><a href="https://github.com/Iayyappareddy/GenYoga.git" target="_blank" rel="noreferrer">GitHub ↗</a></div></article>
+      <article class="project-card"><div class="project-top"><span class="project-number">03 / DATA</span><span class="project-symbol">▥</span></div><h3>Customer Churn Analysis</h3><p>Analyzed more than 7,000 customer records with Python and SQL, surfacing churn patterns and communicating findings through visual summaries.</p><div class="tags"><span>Python</span><span>SQL</span><span>Pandas</span><span>Matplotlib</span></div><div class="project-links"><a href="https://github.com/Iayyappareddy/Chustomer_Churn-project.git" target="_blank" rel="noreferrer">GitHub ↗</a></div></article>
+    </div></section>
+
+    <section class="section" id="education"><div class="section-heading"><p class="eyebrow">MY ACADEMIC JOURNEY</p><h2>Education</h2></div><div class="education-grid">
+      <article class="education-card"><span class="date">2022 – 2026</span><h3>B.Tech, Computer Science and Engineering</h3><p>Sri Krishnadevaraya University College of Engineering and Technology</p><p class="muted">Ananthapur, Andhra Pradesh</p><strong class="score">CGPA 8.2 / 10.0</strong></article>
+      <article class="education-card"><span class="date">2020 – 2022</span><h3>Intermediate, MPC</h3><p>Medha Junior College</p><p class="muted">Mydukur, Andhra Pradesh</p><strong class="score">91.4%</strong></article>
+    </div></section>
+
+    <section class="section" id="contact"><div class="section-heading"><h4 class="eyebrow">LET'S CONNECT</h4></div><div class="contact-grid"><div class="contact-details">
+        <a href="mailto:iragamreddyayyappareddy72@gmail.com"><img src="icons8-mail-24.png" alt="">iragamreddyayyappareddy72@gmail.com</a><a href="tel:+916300445499">☎ &nbsp;+91 6300445499</a><a href="https://www.linkedin.com/in/ayyappa-reddy-i-31696a343" target="_blank" rel="noreferrer"><img src="icons8-linkedin-30.png" alt="">LinkedIn profile</a><a href="https://github.com/Iayyappareddy" target="_blank" rel="noreferrer"><img src="icons8-github-30.png" alt="">GitHub profile</a><span>⌖ &nbsp;Andhra Pradesh, India</span><a href="https://ayyappa-reddy.netlify.app/" target="_blank" rel="noreferrer">🌐 &nbsp;Portfolio</a></div>
+    <form method="POST" action="{% url 'home' %}" id="contactForm" class="contact-form">
+    {% csrf_token %}
+    <label for="senderName">Your name</label>
+    <input id="senderName" name="name" autocomplete="name" required placeholder="Enter name"><label for="senderEmail">Your email</label><input id="senderEmail" name="email" type="email" autocomplete="email" required placeholder="jane@example.com"><label for="senderMessage">Message</label>
+    <textarea id="senderMessage" name="message" rows="5" required placeholder="Tell me a little about what you have in mind..."></textarea><button class="button primary" type="submit">Send me a message <span>↗</span></button>
+  </form>
+</div>
+</section>
+    {% if request.GET.success %}
+    <p class="form-note success-message">
+        Your message was submitted successfully!
+    </p>
+    {% endif %} 
+  </main>
+  <footer><a class="brand" href="#home">AR<span>.</span></a><p>Designed &amp; built by Ayyappa Reddy · 2026</p><a href="#home" class="back-top">Back to top ↑</a></footer>
+  <script>
+    const root = document.documentElement;
+    const themeToggle = document.getElementById('themeToggle');
+    const menuToggle = document.getElementById('menuToggle');
+    const mainNav = document.getElementById('mainNav');
+    const savedTheme = localStorage.getItem('portfolio-theme');
+    if (savedTheme) root.dataset.theme = savedTheme;
+    function updateThemeButton() {
+      const light = root.dataset.theme === 'light';
+      themeToggle.textContent = light ? '☀' : '☾';
+      themeToggle.setAttribute('aria-label', light ? 'Switch to dark theme' : 'Switch to light theme');
+    }
+    updateThemeButton();
+    themeToggle.addEventListener('click', () => {
+      root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+      localStorage.setItem('portfolio-theme', root.dataset.theme);
+      updateThemeButton();
+    });
+    menuToggle.addEventListener('click', () => {
+      const open = menuToggle.getAttribute('aria-expanded') !== 'true';
+      menuToggle.setAttribute('aria-expanded', String(open));
+      menuToggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+      mainNav.classList.toggle('is-open', open);
+    });
+    mainNav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      mainNav.classList.remove('is-open'); menuToggle.setAttribute('aria-expanded', 'false'); menuToggle.setAttribute('aria-label', 'Open navigation');
+    }));
+  </script>
+</body>
+</html>
